@@ -58,7 +58,6 @@ public class BinarySearchTree {
         }
     }
 
-    //Or you can also refer to iterative solution online
     public void inOrderIterative(BSTNode node){
         Stack<BSTNode> stack = new Stack<>();
         this.pushToStack(stack, node);
@@ -107,8 +106,7 @@ public class BinarySearchTree {
         Stack<BSTNode> stack = new Stack<>( );
         BSTNode current = root;
 
-        while( true ) {
-
+        while(true) {
             if( current != null ) {
                 if( current.right != null )
                     stack.push( current.right );
@@ -131,55 +129,6 @@ public class BinarySearchTree {
             }
         }
     }
-
-//
-//    public void postOrderIterative(BSTNode node){
-//        Stack<BSTNode> stack = new Stack<>();
-//        stack.push(node);
-//
-//        BSTNode prev = null;
-//        while(!stack.empty()){
-//            BSTNode curr = stack.peek();
-//
-//            // go down the tree.
-//            //check if current node is leaf, if so, process it and pop stack,
-//            //otherwise, keep going down
-//            if(prev == null || prev.left == curr || prev.right == curr){
-//                //prev == null is the situation for the root node
-//                if(curr.left != null){
-//                    stack.push(curr.left);
-//                }else if(curr.right != null){
-//                    stack.push(curr.right);
-//                }else{
-//                    stack.pop();
-//                    System.out.println(curr.value);
-//                }
-//
-//                //go up the tree from left node
-//                //need to check if there is a right child
-//                //if yes, push it to stack
-//                //otherwise, process parent and pop stack
-//            }
-//            else if(curr.left == prev){
-//                if(curr.right != null){
-//                    stack.push(curr.right);
-//                }else{
-//                    stack.pop();
-//                    System.out.println(curr.value);
-//                }
-//
-//                //go up the tree from right node
-//                //after coming back from right node, process parent node and pop stack.
-//            }
-//            else if(curr.right == prev){
-//                stack.pop();
-//                System.out.println(curr.value);
-//            }
-//
-//            prev = curr;
-//        }
-//    }
-
 
     public BSTNode getRoot(){
         return BSTRoot;
